@@ -7,8 +7,8 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-Laravel ACL is a simple role, permission ACL for Laravel Framework.
-This package was based on the great package [Caffeinated/Shinobi](https://github.com/caffeinated/shinobi) but is fully compatible with Laravel's built-in Gate/Authorization system.
+Multi Tenant Laravel ACL is a simple User - Company - role, permission ACL for SaaS Applications in Laravel Framework.
+This package was based on the great package [Caffeinated/Shinobi](https://github.com/yajra/laravel-acl) but is catered to Multi-Database Multi-Tenant SaaS applications.
 
 ## Documentations
 - [Laravel ACL][link-docs]

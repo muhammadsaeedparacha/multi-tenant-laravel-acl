@@ -1,6 +1,6 @@
 {
     "name": "muhammadsaeedparacha/multi-tenant-laravel-acl",
-    "description": "Master - Tenant based Multi Tenant ACL for Laravel",
+    "description": "Multi Database Multi Tenant ACL for Laravel",
     "keywords": [
         "tenant",
         "tenancy",
