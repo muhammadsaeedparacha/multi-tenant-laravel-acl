@@ -1,0 +1,14 @@
+{
+    "name": "muhammadsaeedparacha/multi-tenancy-laravel-acl",
+    "description": "\u0016Master - Tenant based Multi Tenant ACL for Laravel",
+    "type": "composer-plugin",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Muhammad Saeed Paracha",
+            "email": "saeedparacha13@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
