@@ -86,11 +86,11 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/yajra/laravel-acl.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/yajra/laravel-acl.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/yajra/laravel-acl
+[link-packagist]: https://packagist.org/packages/muhammadsaeedparacha/multi-tenant-laravel-acl
 [link-travis]: https://travis-ci.org/yajra/laravel-acl
 [link-scrutinizer]: https://scrutinizer-ci.com/g/yajra/laravel-acl/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/yajra/laravel-acl
-[link-downloads]: https://packagist.org/packages/yajra/laravel-acl
-[link-author]: https://github.com/yajra
+[link-code-quality]: https://scrutinizer-ci.com/g/muhammadsaeedparacha/multi-tenant-laravel-acl
+[link-downloads]: https://packagist.org/packages/muhammadsaeedparacha/multi-tenant-laravel-acl
+[link-author]: https://github.com/muhammadsaeedparacha
 [link-contributors]: ../../contributors
 [link-docs]: https://yajrabox.com/docs/laravel-acl/3.0
