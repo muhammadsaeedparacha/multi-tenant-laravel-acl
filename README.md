@@ -16,26 +16,27 @@ This package was based on the great package [yajra\laravel-acl](https://github.c
 Via Composer
 
 ``` bash
-$ composer require yajra/laravel-acl:^3.0
+$ composer require muhammadsaeedparacha/multi-tenant-laravel-acl
 ```
 
 ## Configuration
 Register service provider:
 ``` php
-Yajra\Acl\AclServiceProvider::class
+Paracha\Acl\AclServiceProvider::class
 ```
 
 Register Middlewares: in App\Http\Kernel.php
 ```php
-'canAtLeast' => \Yajra\Acl\Middleware\CanAtLeastMiddleware::class,
-'permission' => \Yajra\Acl\Middleware\PermissionMiddleware::class,
-'role' => \Yajra\Acl\Middleware\RoleMiddleware::class,
+'canAtLeast' => \Paracha\Acl\Middleware\CanAtLeastMiddleware::class,
+'permission' => \Paracha\Acl\Middleware\PermissionMiddleware::class,
+'role' => \Paracha\Acl\Middleware\RoleMiddleware::class,
+'checkPermission' => \Paracha\Acl\Middleware\CheckPermissionsMiddleware::class,
 ```
 
 Define User Trait in User Model
 ```php
 ...
-use Yajra\Acl\Traits\HasRoleAndPermission;
+use Paracha\Acl\Traits\HasRoleAndPermission;
 
 class User extends Authenticatable
 {

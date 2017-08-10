@@ -1,8 +1,8 @@
 <?php
 
-namespace Yajra\Acl\Traits;
+namespace Paracha\Acl\Traits;
 
-use Yajra\Acl\Models\Permission;
+use Paracha\Acl\Models\Permission;
 use App\User;
 
 trait RoleHasPermission

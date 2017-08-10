@@ -1,6 +1,6 @@
 <?php
 
-namespace Yajra\Acl\Test;
+namespace Paracha\Acl\Test;
 
 class ExampleTest extends \PHPUnit_Framework_TestCase
 {

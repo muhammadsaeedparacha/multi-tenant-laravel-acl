@@ -1,10 +1,10 @@
 <?php
 
-namespace Yajra\Acl\Traits;
+namespace Paracha\Acl\Traits;
 
 use Illuminate\Support\Str;
-use Yajra\Acl\Models\Role;
-use Yajra\Acl\Models\Permission;
+use Paracha\Acl\Models\Role;
+use Paracha\Acl\Models\Permission;
 use App\User;
 
 trait CompanyUserHasRoleAndPermission

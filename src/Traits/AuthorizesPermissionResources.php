@@ -1,6 +1,6 @@
 <?php
 
-namespace Yajra\Acl\Traits;
+namespace Paracha\Acl\Traits;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Fluent;

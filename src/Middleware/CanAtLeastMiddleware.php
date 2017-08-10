@@ -1,6 +1,6 @@
 <?php
 
-namespace Yajra\Acl\Middleware;
+namespace Paracha\Acl\Middleware;
 
 use Closure;
 

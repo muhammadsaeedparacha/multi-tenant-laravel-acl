@@ -34,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "MuhammadSaeedParacha\\Acl\\": "src"
+            "Paracha\\Acl\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MuhammadSaeedParacha\\Acl\\Test\\": "tests"
+            "Paracha\\Acl\\Test\\": "tests"
         }
     },
     "scripts": {

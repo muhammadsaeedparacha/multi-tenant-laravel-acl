@@ -1,6 +1,6 @@
 <?php
 
-namespace Yajra\Acl\Directives;
+namespace Paracha\Acl\Directives;
 
 use Illuminate\Contracts\Auth\Guard;
 

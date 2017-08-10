@@ -1,9 +1,9 @@
 <?php
 
-namespace Yajra\Acl\Models;
+namespace Paracha\Acl\Models;
 
 use Illuminate\Support\Collection;
-use Yajra\Acl\Traits\PermissionHasRole;
+use Paracha\Acl\Traits\PermissionHasRole;
 use Illuminate\Database\Eloquent\Model;
 
 /**

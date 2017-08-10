@@ -1,15 +1,15 @@
 <?php
 
-namespace Yajra\Acl;
+namespace Paracha\Acl;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\View\Compilers\BladeCompiler;
-use Yajra\Acl\Models\Permission;
-use Yajra\Acl\Models\Role;
-use Yajra\Acl\Models\Acl;
+use Paracha\Acl\Models\Permission;
+use Paracha\Acl\Models\Role;
+use Paracha\Acl\Models\Acl;
 
 class AclServiceProvider extends ServiceProvider
 {

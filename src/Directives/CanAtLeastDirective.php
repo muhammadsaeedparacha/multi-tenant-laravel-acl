@@ -1,8 +1,8 @@
 <?php
 
-namespace Yajra\Acl\Directives;
+namespace Paracha\Acl\Directives;
 
-use Yajra\Acl\Models\Role;
+use Paracha\Acl\Models\Role;
 
 class CanAtLeastDirective extends DirectiveAbstract
 {

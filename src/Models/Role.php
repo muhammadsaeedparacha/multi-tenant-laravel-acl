@@ -1,12 +1,12 @@
 <?php
 
-namespace Yajra\Acl\Models;
+namespace Paracha\Acl\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Yajra\Acl\Traits\RoleHasPermission;
+use Paracha\Acl\Traits\RoleHasPermission;
 
 /**
- * @property \Yajra\Acl\Models\Permission permissions
+ * @property \Paracha\Acl\Models\Permission permissions
  * @property bool system
  */
 class Role extends Model

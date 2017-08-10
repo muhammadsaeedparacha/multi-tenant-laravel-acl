@@ -1,6 +1,6 @@
 <?php
 
-namespace Yajra\Acl\Directives;
+namespace Paracha\Acl\Directives;
 
 class HasRoleDirective extends DirectiveAbstract
 {
