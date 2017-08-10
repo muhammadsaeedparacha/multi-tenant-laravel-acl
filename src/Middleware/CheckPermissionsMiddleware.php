@@ -16,18 +16,19 @@ class CheckPermissionsMiddleware
      */
     public function handle($request, Closure $next, $permission = null)
     {
-        if(!$permission){
+        if (!$permission) {
             $uri = $request->path();
             $path = explode('/', $uri);
             $pathCount = count($path);
 
             // Preparing variables for request permissions authorization
-            // Note this would fail when a request doesn't follow laravel standardized requests like: api/users/permissions or users/invite would not pass
+            // /Note this would fail when a request doesn't follow laravel standardized requests 
+            // like: api/users/permissions or users/invite would not pass
             if ($pathCount > 1) {
                 # Model
                 $model = $path[1];
-            }else{
-                return response(["error" => ["Request at " . $path . " not Recognized"]],403);
+            }else {
+                return response(["error" => ["Request at " . $path . " not Recognized"]], 403);
             }
             if ($pathCount > 2) {
                 # Update or Report

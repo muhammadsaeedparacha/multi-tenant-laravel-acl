@@ -21,7 +21,7 @@ class CanAtLeastMiddleware
         if (! auth()->check() || ! auth()->user()->canAtLeast($abilities)) {
             if ($request->ajax()) {
                 $error = ['error' => ["You are not authorized to view this content!"]];
-                return response($error, 401); 
+                return response($error, 401);
             }
 
             return abort(401, 'You are not authorized to view this content!');
