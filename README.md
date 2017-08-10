@@ -65,12 +65,10 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 
 ## Security
 
-If you discover any security related issues, please email aqangeles@gmail.com instead of using the issue tracker.
+If you discover any security related issues, please email saeedparacha13@gmail.com instead of using the issue tracker.
 
 ## Credits
 
-- [Arjay Angeles][link-author]
-- [Caffeinated/Shinobi](https://github.com/caffeinated/shinobi)
 - [All Contributors][link-contributors]
 
 ## License
@@ -83,7 +81,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-downloads]: https://img.shields.io/packagist/dt/muhammadsaeedparacha/multi-tenant-laravel-acl.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/muhammadsaeedparacha/multi-tenant-laravel-acl
-[link-travis]: https://travis-ci.org/yajra/laravel-acl
+[link-travis]: https://travis-ci.org/muhammadsaeedparacha/multi-tenant-laravel-acl
 [link-downloads]: https://packagist.org/packages/muhammadsaeedparacha/multi-tenant-laravel-acl
 [link-author]: https://github.com/muhammadsaeedparacha
 [link-contributors]: ../../contributors
