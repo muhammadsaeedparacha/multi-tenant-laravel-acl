@@ -80,7 +80,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-version]: https://img.shields.io/packagist/v/muhammadsaeedparacha/multi-tenant-laravel-acl.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/Liscence-Apache--2.0-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/yajra/laravel-acl/master.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/yajra/laravel-acl.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/muhammadsaeedparacha/multi-tenant-laravel-acl.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/muhammadsaeedparacha/multi-tenant-laravel-acl
 [link-travis]: https://travis-ci.org/yajra/laravel-acl
