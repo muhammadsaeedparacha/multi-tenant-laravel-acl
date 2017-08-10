@@ -3,8 +3,6 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 Multi Tenant Laravel ACL is a simple User - Company - role, permission ACL for SaaS Applications in Laravel Framework.
@@ -82,14 +80,10 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-version]: https://img.shields.io/packagist/v/muhammadsaeedparacha/multi-tenant-laravel-acl.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/Liscence-Apache--2.0-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/yajra/laravel-acl/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/yajra/laravel-acl.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/yajra/laravel-acl.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/yajra/laravel-acl.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/muhammadsaeedparacha/multi-tenant-laravel-acl
 [link-travis]: https://travis-ci.org/yajra/laravel-acl
-[link-scrutinizer]: https://scrutinizer-ci.com/g/yajra/laravel-acl/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/muhammadsaeedparacha/multi-tenant-laravel-acl
 [link-downloads]: https://packagist.org/packages/muhammadsaeedparacha/multi-tenant-laravel-acl
 [link-author]: https://github.com/muhammadsaeedparacha
 [link-contributors]: ../../contributors
