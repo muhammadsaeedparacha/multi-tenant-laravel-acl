@@ -4,6 +4,7 @@
     "keywords": [
         "tenant",
         "tenancy",
+        "multi tenant",
         "saeed",
         "paracha",
         "acl",
@@ -33,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Yajra\\Acl\\": "src"
+            "MuhammadSaeedParacha\\Acl\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Yajra\\Acl\\Test\\": "tests"
+            "MuhammadSaeedParacha\\Acl\\Test\\": "tests"
         }
     },
     "scripts": {
