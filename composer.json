@@ -1,6 +1,17 @@
 {
-    "name": "muhammadsaeedparacha/multi-tenancy-laravel-acl",
-    "description": "\u0016Master - Tenant based Multi Tenant ACL for Laravel",
+    "name": "muhammadsaeedparacha/multi-tenant-laravel-acl",
+    "description": "Master - Tenant based Multi Tenant ACL for Laravel",
+    "keywords": [
+        "tenant",
+        "tenancy",
+        "saeed",
+        "paracha",
+        "acl",
+        "user",
+        "role",
+        "permissions"
+    ],
+    "homepage": "https://github.com/muhammadsaeedparacha/multi-tenant-laravel-acl",
     "type": "composer-plugin",
     "license": "Apache-2.0",
     "authors": [
@@ -10,5 +21,27 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php" : ">=5.6.4",
+        "illuminate/support": "~5.3",
+        "illuminate/database": "~5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yajra\\Acl\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yajra\\Acl\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
 }
