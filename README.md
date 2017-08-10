@@ -5,8 +5,8 @@
 [![Build Status][ico-travis]][link-travis]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-Multi Tenant Laravel ACL is a simple User - Company - role, permission ACL for SaaS Applications in Laravel Framework.
-This package was based on the great package [Caffeinated/Shinobi](https://github.com/yajra/laravel-acl) but is catered to Multi-Database Multi-Tenant SaaS applications.
+Multi Tenant Laravel ACL is a simple Multi Database Multi Tenant - user, company_user, role, permission ACL for SaaS Applications in Laravel Framework.
+This package was based on the great package [yajra\laravel-acl](https://github.com/yajra/laravel-acl) but is catered to Multi-Database Multi-Tenant SaaS applications.
 
 ## Documentations
 - [Laravel ACL][link-docs]
