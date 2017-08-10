@@ -36,7 +36,7 @@ class AclServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../config/acl.php' => config_path('acl.php'),
-            ], 'laravel-acl');
+            ], 'paracha-multi-tenant-laravel-acl');
     }
 
     /**
@@ -49,7 +49,7 @@ class AclServiceProvider extends ServiceProvider
         }
         $this->publishes([
             __DIR__ . '/../migrations' => database_path('migrations')
-            ], 'laravel-acl');
+            ], 'paracha-multi-tenant-laravel-acl');
     }
 
     /**

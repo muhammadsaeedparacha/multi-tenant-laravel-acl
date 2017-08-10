@@ -33,22 +33,9 @@ Register Middlewares: in App\Http\Kernel.php
 'checkPermission' => \Paracha\Acl\Middleware\CheckPermissionsMiddleware::class,
 ```
 
-Define User Trait in User Model
-```php
-...
-use Paracha\Acl\Traits\HasRoleAndPermission;
-
-class User extends Authenticatable
-{
-	...
-	use HasRoleAndPerimssions; 
-	...
-}
-```
-
 Publish assets:
 ```php
-$ php artisan vendor:publish --tag=laravel-acl
+$ php artisan vendor:publish --tag=multi-tenant-laravel-acl
 ```
 
 Run migrations:
@@ -74,7 +61,7 @@ If you discover any security related issues, please email saeedparacha13@gmail.c
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The Apache-2.0 License. Please see [License File](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/muhammadsaeedparacha/multi-tenant-laravel-acl.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/Liscence-Apache--2.0-brightgreen.svg?style=flat-square
