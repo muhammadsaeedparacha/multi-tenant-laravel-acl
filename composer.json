@@ -13,7 +13,7 @@
         "permissions"
     ],
     "homepage": "https://github.com/muhammadsaeedparacha/multi-tenant-laravel-acl",
-    "type": "composer-plugin",
+    // "type": "composer-plugin",
     "license": "Apache-2.0",
     "authors": [
         {
