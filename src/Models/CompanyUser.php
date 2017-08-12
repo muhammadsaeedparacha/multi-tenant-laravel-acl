@@ -8,7 +8,7 @@ class CompanyUser extends Model
 {
 	use CompanyUserHasRoleAndPermission;
 	protected $table = 'company_user';
-	protected $connection = 'master';
+	protected $connection = config('database.default');
 	protected $fillable = ['company_id','user_id','settings','authorized'];
 
 }

@@ -34,22 +34,9 @@ Paracha\Acl\AclServiceProvider::class
 'checkPermission' => \Paracha\Acl\Middleware\CheckPermissionsMiddleware::class,
 ```
 
-[3] Set Empty Tenant Connection: in `Config\Database` to be filled on the fly based on tenant:
+[3] Set Master & Tenant Connection: in `Config\Database` to be filled on the fly based on tenant:
+Note: Currently only Supports MySQL
 ```php
-'master' => [
-'driver' => 'mysql',
-'host' => env('DB_HOST', 'localhost'),
-'port' => env('DB_PORT', '3306'),
-'database' => env('DB_DATABASE', 'forge'),
-'username' => env('DB_USERNAME', 'forge'),
-'password' => env('DB_PASSWORD', ''),
-'charset' => 'utf8',
-'collation' => 'utf8_unicode_ci',
-'prefix' => '',
-'strict' => true,
-'engine' => null,
-],
-
 'tenant' => [
 'driver' => 'mysql',
 'host' => '',
@@ -65,12 +52,17 @@ Paracha\Acl\AclServiceProvider::class
 ],
 ```
 
-[3] Publish assets:
+[4] Publish assets:
 ```php
 $ php artisan vendor:publish --tag=multi-tenant-laravel-acl
 ```
 
-[3.1] Or run migrate directly by putting this in app/providers/AppServiceProvider
+[5: Optional] Configure your Tenant Migrations Location: in `Config\Acl`. The array defines folders within `Database\Migrations`
+```
+'tenantMigrations' => ['tenant']
+```
+
+[6] Run migrations. 
 
 Run migrations:
 ```php

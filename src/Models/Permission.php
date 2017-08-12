@@ -22,7 +22,7 @@ class Permission extends Model
      * @var string
      */
     protected $table = 'permissions';
-    protected $connection = 'master';
+    protected $connection = config('database.default');
 
     /**
      * @var array

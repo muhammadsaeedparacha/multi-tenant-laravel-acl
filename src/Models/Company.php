@@ -218,29 +218,37 @@ class Company extends Model
         \DB::statement($query);
     }
     
-    public function setTenantConnection(){
-        \Config::set('database.connections.tenant.host', $this->db_host);
-        \Config::set('database.connections.tenant.database', 'db_' . $this->id);
-        \Config::set('database.connections.tenant.username', $this->id);
-        \Config::set('database.connections.tenant.password', 'password');
+    public function setTenantConnection($default = config('database.default')){
+        switch ($default) {
+            case 'mysql':
+            \Config::set('database.connections.tenant.host', $this->db_host);
+            \Config::set('database.connections.tenant.database', 'db_' . $this->id);
+            \Config::set('database.connections.tenant.username', $this->id);
+            \Config::set('database.connections.tenant.password', 'password');
+
+            //Reconnect the original database connection
+            \DB::purge('tenant');
+            \DB::reconnect('tenant');
+            break;
+            
+            default:
+                # code...
+            break;
+        }
         
-        //If you want to use query builder without having to specify the connection
-        \DB::purge('tenant');
-        \DB::reconnect('tenant');
     }
     
     public function migrateTenant(){
         $mig = app()->make('migrator');
         $this->setTenantConnection();
-        \Config::set('database.connections.tenant.username', config('database.connections.master.username'));
-        \Config::set('database.connections.tenant.password', config('database.connections.master.password'));
+        \Config::set('database.connections.tenant.username', config('database.connections.' . config('database.default') . '.database'));
+        \Config::set('database.connections.tenant.password', config('database.connections.' . config('database.default') . '.database'));
         \DB::purge('tenant');
         \DB::reconnect('tenant');
         
         $mig->setConnection('tenant');
         $mig->getRepository()->createRepository();
         $path = base_path('database/migrations');
-        $mig->run($path);
         $mig->run($path . '/tenants');
         $mig->run($path . '/tenants/master');
         $mig->run($path . '/tenants/master/users');

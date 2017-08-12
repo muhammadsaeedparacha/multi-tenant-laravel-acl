@@ -14,7 +14,7 @@ class CreateCompanyUserRoleTable extends Migration
     public function up()
     {
         Schema::connection('tenant')->create('company_user_role', function (Blueprint $table) {
-            $db = config()->get('database.connections.master.database');
+            $db = config()->get('database.connections.' . config('database.default') . '.database');
 
             $table->increments('id');
             $table->integer('role_id')->unsigned()->index();
