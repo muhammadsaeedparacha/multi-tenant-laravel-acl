@@ -11,7 +11,7 @@ This package was based on the great package [yajra\laravel-acl](https://github.c
 # Documentations
 - [Laravel ACL][link-docs]
 
-# Installation
+# 1) Installation
 
 Via Composer
 
@@ -19,13 +19,13 @@ Via Composer
 $ composer require muhammadsaeedparacha/multi-tenant-laravel-acl
 ```
 
-## Configuration
-[1] Register service provider:
+# 2) Configuration
+## [i] Register service provider:
 ``` php
 Paracha\Acl\AclServiceProvider::class
 ```
 
-[2] Register Middlewares: in App\Http\Kernel.php
+## [ii] Register Middlewares: in App\Http\Kernel.php
 ```php
 'canAtLeast' => \Paracha\Acl\Middleware\CanAtLeastMiddleware::class,
 'permission' => \Paracha\Acl\Middleware\PermissionMiddleware::class,
@@ -34,7 +34,7 @@ Paracha\Acl\AclServiceProvider::class
 'checkPermission' => \Paracha\Acl\Middleware\CheckPermissionsMiddleware::class,
 ```
 
-[3] Set Master & Tenant Connection: in `Config\Database` to be filled on the fly based on tenant:
+## [iii] Set Master & Tenant Connection: in `Config\Database` to be filled on the fly based on tenant:
 Note: Currently only Supports MySQL
 ```php
 'tenant' => [
@@ -52,22 +52,22 @@ Note: Currently only Supports MySQL
 ],
 ```
 
-[4] Publish assets:
+## [iv] Publish assets:
 ```php
 $ php artisan vendor:publish --tag=multi-tenant-laravel-acl
 ```
 
-[5: Optional] Configure your Tenant Migrations Location: in `Config\Acl`. The array defines folders within `Database\Migrations`
+## [v: Optional] Configure your Tenant Migrations Location: in `Config\Acl`. The array defines folders within `Database\Migrations`
 ``` php
 'tenantMigrations' => ['tenant']
 ```
 
-[6] Run migrations:
+## [vi] Run migrations:
 ```php
 php artisan migrate
 ```
 
-# Documentation
+# 3) Documentation
 ## Middleware
 
 ## Change log
