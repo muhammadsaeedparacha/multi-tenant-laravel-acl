@@ -36,7 +36,7 @@ class AclServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../config/acl.php' => config_path('acl.php'),
-            ], 'paracha-multi-tenant-laravel-acl');
+            ], 'multi-tenant-laravel-acl');
     }
 
     /**
@@ -49,7 +49,7 @@ class AclServiceProvider extends ServiceProvider
         }
         $this->publishes([
             __DIR__ . '/../migrations' => database_path('migrations')
-            ], 'paracha-multi-tenant-laravel-acl');
+            ], 'multi-tenant-laravel-acl');
     }
 
     /**
@@ -63,7 +63,7 @@ class AclServiceProvider extends ServiceProvider
             foreach ($this->getPermissions() as $permission) {
                 $ability = $permission->slug;
                 $policy  = function ($user) use ($permission) {
-                    return $user->hasRole($permission->roles) || in_array($permission, $user->permissions);
+                    return $user->hasRole($permission->roles) || in_array($permission, $user->permissions) ? true : false;
                 };
 
                 if (Str::contains($permission->slug, '@')) {

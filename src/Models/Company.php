@@ -189,14 +189,22 @@ class Company extends Model
         return $this->belongsToMany(\App\User::class, 'company_user')->withPivot('settings', 'authorized');
     }
     
-    public static function loggedInCompany(){
+    public static function loggedInCompany($method){
         //Return the Company that the current user is visiting through the SubDomain
-        $request = Request::getHost();
-        $subdomain = explode('.', $request);
-        $subdomain = array_slice($subdomain, 0, count($subdomain) - 2 );
-        $subdomain = $subdomain[0];
-        $company = Company::where('subdomain', $subdomain)->first();
-        return $company;
+        switch ($method) {
+            case 'subdomain':
+            $request = Request::getHost();
+            $subdomain = explode('.', $request);
+            $subdomain = array_slice($subdomain, 0, count($subdomain) - 2 );
+            $subdomain = $subdomain[0];
+            $company = Company::where('subdomain', $subdomain)->first();
+            return $company;
+            break;
+            
+            default:
+                # code...
+            break;
+        }
     }
     
     public function createTenantDatabase(){
