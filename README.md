@@ -67,6 +67,9 @@ $ php artisan vendor:publish --tag=multi-tenant-laravel-acl
 php artisan migrate
 ```
 
+## Documentation
+# Middleware
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.

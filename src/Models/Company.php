@@ -241,20 +241,24 @@ class Company extends Model
     public function migrateTenant(){
         $mig = app()->make('migrator');
         $this->setTenantConnection();
-        \Config::set('database.connections.tenant.username', config('database.connections.' . config('database.default') . '.database'));
-        \Config::set('database.connections.tenant.password', config('database.connections.' . config('database.default') . '.database'));
-        \DB::purge('tenant');
-        \DB::reconnect('tenant');
+        // fixit
+        // \Config::set('database.connections.tenant.username', config('database.connections.' . config('database.default') . '.database'));
+        // \Config::set('database.connections.tenant.password', config('database.connections.' . config('database.default') . '.database'));
+        // \DB::purge('tenant');
+        // \DB::reconnect('tenant');
         
         $mig->setConnection('tenant');
         $mig->getRepository()->createRepository();
         $path = base_path('database/migrations');
-        $mig->run($path . '/tenants');
-        $mig->run($path . '/tenants/master');
-        $mig->run($path . '/tenants/master/users');
-        $mig->run($path . '/tenants/master/inventory');
-        $mig->run($path . '/tenants/accounts');
-        $mig->run($path . '/tenants/hrm');
+        forEach (config('acl.tenantMigrations') as $tenantPath){
+            $mig->run($path . $tenantPath);
+        }
+        // fixit
+        // $mig->run($path . '/tenants/master');
+        // $mig->run($path . '/tenants/master/users');
+        // $mig->run($path . '/tenants/master/inventory');
+        // $mig->run($path . '/tenants/accounts');
+        // $mig->run($path . '/tenants/hrm');
     }
     
     public static function dummy(Company $company = null){
