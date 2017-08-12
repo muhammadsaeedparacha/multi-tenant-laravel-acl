@@ -15,7 +15,7 @@ This package was based on the great package [yajra\laravel-acl](https://github.c
 
 Via Composer
 
-``` bash
+``` php
 $ composer require muhammadsaeedparacha/multi-tenant-laravel-acl
 ```
 
