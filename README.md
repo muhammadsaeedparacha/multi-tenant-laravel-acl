@@ -15,7 +15,7 @@ This package was based on the great package [yajra\laravel-acl](https://github.c
 
 Via Composer
 
-``` php
+``` bash
 $ composer require muhammadsaeedparacha/multi-tenant-laravel-acl
 ```
 
@@ -58,7 +58,7 @@ $ php artisan vendor:publish --tag=multi-tenant-laravel-acl
 ```
 
 [5: Optional] Configure your Tenant Migrations Location: in `Config\Acl`. The array defines folders within `Database\Migrations`
-```
+``` php
 'tenantMigrations' => ['tenant']
 ```
 
