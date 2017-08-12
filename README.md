@@ -8,8 +8,8 @@
 Multi Tenant Laravel ACL is a simple Multi Database Multi Tenant - user, company_user, role, permission ACL for SaaS Applications in Laravel Framework.
 This package was based on the great package [yajra\laravel-acl](https://github.com/yajra/laravel-acl) but is catered to Multi-Database Multi-Tenant SaaS applications.
 
-## Documentations
-- [Laravel ACL][link-docs]
+<!-- ## Documentations -->
+<!-- - [Laravel ACL][link-docs] -->
 
 ## 1) Installation
 
@@ -59,7 +59,7 @@ $ php artisan vendor:publish --tag=multi-tenant-laravel-acl
 
 ### [v: Optional] Configure your Tenant Migrations Location: in `Config\Acl`. The array defines folders within `Database\Migrations`
 ``` php
-'tenantMigrations' => ['tenant']
+'tenantMigrations' => ['/tenants']
 ```
 
 ### [vi] Run migrations:
