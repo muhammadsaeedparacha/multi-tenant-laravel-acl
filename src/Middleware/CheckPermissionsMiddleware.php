@@ -20,7 +20,6 @@ class CheckPermissionsMiddleware
             $uri = $request->path();
             $path = explode('/', $uri);
             $pathCount = count($path);
-
             // Preparing variables for request permissions authorization
             // /Note this would fail when a request doesn't follow laravel standardized requests 
             // like: api/users/permissions or users/invite would not pass

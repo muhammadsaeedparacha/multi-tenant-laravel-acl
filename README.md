@@ -20,7 +20,7 @@ $ composer require muhammadsaeedparacha/multi-tenant-laravel-acl
 ```
 
 ## Configuration
-Register service provider:
+[1] Register service provider:
 ``` php
 Paracha\Acl\AclServiceProvider::class
 ```
