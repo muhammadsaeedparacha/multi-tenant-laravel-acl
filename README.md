@@ -25,18 +25,52 @@ $ composer require muhammadsaeedparacha/multi-tenant-laravel-acl
 Paracha\Acl\AclServiceProvider::class
 ```
 
-Register Middlewares: in App\Http\Kernel.php
+[2] Register Middlewares: in App\Http\Kernel.php
 ```php
 'canAtLeast' => \Paracha\Acl\Middleware\CanAtLeastMiddleware::class,
 'permission' => \Paracha\Acl\Middleware\PermissionMiddleware::class,
 'role' => \Paracha\Acl\Middleware\RoleMiddleware::class,
+'tenantConnection' => \Paracha\Acl\Middleware\TenantConnectionMiddleware::class,
 'checkPermission' => \Paracha\Acl\Middleware\CheckPermissionsMiddleware::class,
 ```
 
-Publish assets:
+[3] Set Empty Tenant Connection: in `Config\Database` to be filled on the fly based on tenant:
+```php
+'master' => [
+'driver' => 'mysql',
+'host' => env('DB_HOST', 'localhost'),
+'port' => env('DB_PORT', '3306'),
+'database' => env('DB_DATABASE', 'forge'),
+'username' => env('DB_USERNAME', 'forge'),
+'password' => env('DB_PASSWORD', ''),
+'charset' => 'utf8',
+'collation' => 'utf8_unicode_ci',
+'prefix' => '',
+'strict' => true,
+'engine' => null,
+],
+
+'tenant' => [
+'driver' => 'mysql',
+'host' => '',
+'port' => env('DB_PORT', '3306'),
+'database' => '',
+'username' => '',
+'password' => '',
+'charset' => 'utf8',
+'collation' => 'utf8_unicode_ci',
+'prefix' => '',
+'strict' => true,
+'engine' => null,
+],
+```
+
+[3] Publish assets:
 ```php
 $ php artisan vendor:publish --tag=multi-tenant-laravel-acl
 ```
+
+[3.1] Or run migrate directly by putting this in app/providers/AppServiceProvider
 
 Run migrations:
 ```php

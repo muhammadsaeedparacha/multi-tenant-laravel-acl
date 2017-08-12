@@ -4,7 +4,7 @@ namespace Paracha\Acl\Middleware;
 
 use Closure;
 
-class CheckPermissionsMiddleware
+class TenantConnectionMiddleware
 {
     /**
     * Handle an incoming request.

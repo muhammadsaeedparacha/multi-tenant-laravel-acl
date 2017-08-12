@@ -21,8 +21,11 @@ class AclServiceProvider extends ServiceProvider
      */
     public function boot(GateContract $gate)
     {
-        $this->publishConfig();
-        $this->publishMigrations();
+        if ($this->app->runningInConsole())
+        {
+            $this->publishConfig();
+            $this->publishMigrations();
+        }
         $this->registerPolicies();
         $this->registerPermissions($gate);
         $this->registerCacheListener();
