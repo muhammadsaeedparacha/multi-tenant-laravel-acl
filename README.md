@@ -62,9 +62,7 @@ $ php artisan vendor:publish --tag=multi-tenant-laravel-acl
 'tenantMigrations' => ['tenant']
 ```
 
-[6] Run migrations. 
-
-Run migrations:
+[6] Run migrations:
 ```php
 php artisan migrate
 ```
