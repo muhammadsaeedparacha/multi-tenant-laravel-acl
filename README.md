@@ -8,10 +8,10 @@
 Multi Tenant Laravel ACL is a simple Multi Database Multi Tenant - user, company_user, role, permission ACL for SaaS Applications in Laravel Framework.
 This package was based on the great package [yajra\laravel-acl](https://github.com/yajra/laravel-acl) but is catered to Multi-Database Multi-Tenant SaaS applications.
 
-# Documentations
+## Documentations
 - [Laravel ACL][link-docs]
 
-# 1) Installation
+## 1) Installation
 
 Via Composer
 
@@ -19,13 +19,13 @@ Via Composer
 $ composer require muhammadsaeedparacha/multi-tenant-laravel-acl
 ```
 
-# 2) Configuration
-## [i] Register service provider:
+## 2) Configuration
+### [i] Register service provider:
 ``` php
 Paracha\Acl\AclServiceProvider::class
 ```
 
-## [ii] Register Middlewares: in App\Http\Kernel.php
+### [ii] Register Middlewares: in App\Http\Kernel.php
 ```php
 'canAtLeast' => \Paracha\Acl\Middleware\CanAtLeastMiddleware::class,
 'permission' => \Paracha\Acl\Middleware\PermissionMiddleware::class,
@@ -34,7 +34,7 @@ Paracha\Acl\AclServiceProvider::class
 'checkPermission' => \Paracha\Acl\Middleware\CheckPermissionsMiddleware::class,
 ```
 
-## [iii] Set Master & Tenant Connection: in `Config\Database` to be filled on the fly based on tenant:
+### [iii] Set Master & Tenant Connection: in `Config\Database` to be filled on the fly based on tenant:
 Note: Currently only Supports MySQL
 ```php
 'tenant' => [
@@ -52,41 +52,41 @@ Note: Currently only Supports MySQL
 ],
 ```
 
-## [iv] Publish assets:
+### [iv] Publish assets:
 ```php
 $ php artisan vendor:publish --tag=multi-tenant-laravel-acl
 ```
 
-## [v: Optional] Configure your Tenant Migrations Location: in `Config\Acl`. The array defines folders within `Database\Migrations`
+### [v: Optional] Configure your Tenant Migrations Location: in `Config\Acl`. The array defines folders within `Database\Migrations`
 ``` php
 'tenantMigrations' => ['tenant']
 ```
 
-## [vi] Run migrations:
+### [vi] Run migrations:
 ```php
 php artisan migrate
 ```
 
-# 3) Documentation
-## Middleware
+## 3) Documentation
+### Middleware
 
-## Change log
+### Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Contributing
+### Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
 
-## Security
+### Security
 
 If you discover any security related issues, please email saeedparacha13@gmail.com instead of using the issue tracker.
 
-## Credits
+### Credits
 
 - [All Contributors][link-contributors]
 
-## License
+### License
 
 The Apache-2.0 License. Please see [License File](LICENSE.md) for more information.
 
