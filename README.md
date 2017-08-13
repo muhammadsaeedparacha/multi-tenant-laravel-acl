@@ -77,7 +77,17 @@ class Company extends Model
 ```
 
 ## 3) Documentation
-#### Middleware
+#### [vii] Middleware for route permissions. Currently only for Ajax/XHR requests in `routes\api.php`
+```php
+Route::group(['middleware' => ['auth:api','tenantConnection']], function(){
+Route::group(['middleware' => ['checkPermission']], function(){
+// Regular Permissions like users.create, users.update, users.read, users.delete, users.report
+Route::resource('/users', 'UsersController');
+});
+// Customer Permissions like users.custom, users.xyz
+Route::post('/users/invite', 'UsersController@invite')->middleware('checkPermission:users.custom');
+});
+```
 
 ### Change log
 
