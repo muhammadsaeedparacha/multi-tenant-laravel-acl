@@ -7,7 +7,7 @@ use Paracha\Acl\Models\Role;
 use Paracha\Acl\Models\Permission;
 use App\User;
 
-trait CompanyUserHasRoleAndPermission
+trait AclCompanyUser
 {
 
     /**

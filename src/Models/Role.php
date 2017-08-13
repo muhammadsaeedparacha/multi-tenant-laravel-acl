@@ -3,7 +3,7 @@
 namespace Paracha\Acl\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Paracha\Acl\Traits\RoleHasPermission;
+use Paracha\Acl\Traits\AclRole;
 
 /**
  * @property \Paracha\Acl\Models\Permission permissions
@@ -11,7 +11,7 @@ use Paracha\Acl\Traits\RoleHasPermission;
  */
 class Role extends Model
 {
-    use RoleHasPermission;
+    use AclRole;
     protected $connection = 'tenant';
 
     /**

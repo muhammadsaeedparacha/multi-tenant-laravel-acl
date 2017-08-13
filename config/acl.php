@@ -35,10 +35,10 @@ return [
     'companyUser' => \Paracha\Acl\Models\CompanyUser::class,
 
     /**
-     * How to Identify Tenant on Request when one Logged In User can Belong to multiple Tenants. 
+     * How to Identify Tenant Company on Request
      * Tenant identification options: user, subdomain
-     * User: When 1 user belongs to One Tenant Only
-     * Subdomain and Other options: When 1 User can belong to many tenants. E.g. One User have Multiple Companies for Accounting Software etc.
+     * 1) User: When 1 Company/Tenant belongs to One User Only
+     * 2) Subdomain: When 1 User can belong to many tenants. E.g. One User have Multiple Companies for Accounting Software etc.
      */
     'tenantIdentification' => 'subdomain'
     ];

@@ -47,9 +47,6 @@ class AclServiceProvider extends ServiceProvider
      */
     protected function publishMigrations()
     {
-        if (Acl::$runMigrations) {
-            $this->loadMigrationsFrom(__DIR__ . '/../migrations');
-        }
         $this->publishes([
             __DIR__ . '/../migrations' => database_path('migrations')
             ], 'multi-tenant-laravel-acl');

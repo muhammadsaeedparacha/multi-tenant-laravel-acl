@@ -5,7 +5,7 @@ namespace Paracha\Acl\Traits;
 use Paracha\Acl\Models\Permission;
 use App\User;
 
-trait RoleHasPermission
+trait AclRole
 {
     /**
      * Assigns the given permission to the role .
@@ -19,10 +19,8 @@ trait RoleHasPermission
 
         if (! $permissions->contains($permissionId)) {
             $this->permissions()->attach($permissionId);
-
             return true;
         }
-
         return false;
     }
 

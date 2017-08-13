@@ -5,7 +5,7 @@ namespace Paracha\Acl\Traits;
 use Illuminate\Support\Str;
 use Paracha\Acl\Models\Role;
 
-trait PermissionHasRole
+trait AclPermission
 {
     /**
      * Get all of the posts that are assigned this tag.

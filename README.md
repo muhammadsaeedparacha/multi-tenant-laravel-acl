@@ -67,26 +67,35 @@ $ php artisan vendor:publish --tag=multi-tenant-laravel-acl
 php artisan migrate
 ```
 
+### [vii] Put User trait in `App\User` Model:
+```php
+use Paracha\Acl\Traits\AclUser;
+class Company extends Model
+{
+	use AclUser
+}
+```
+
 ## 3) Documentation
 ### Middleware
 
-### Change log
+## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-### Contributing
+## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
 
-### Security
+## Security
 
 If you discover any security related issues, please email saeedparacha13@gmail.com instead of using the issue tracker.
 
-### Credits
+## Credits
 
 - [All Contributors][link-contributors]
 
-### License
+## License
 
 The Apache-2.0 License. Please see [License File](LICENSE.md) for more information.
 

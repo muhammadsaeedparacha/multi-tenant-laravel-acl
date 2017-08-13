@@ -3,7 +3,7 @@
 namespace Paracha\Acl\Models;
 
 use Illuminate\Support\Collection;
-use Paracha\Acl\Traits\PermissionHasRole;
+use Paracha\Acl\Traits\AclPermission;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Permission extends Model
 {
-    use PermissionHasRole;
+    use AclPermission;
 
     /**
      * The database table used by the model.
