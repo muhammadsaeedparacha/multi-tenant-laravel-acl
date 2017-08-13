@@ -92,7 +92,7 @@ Route::post('/users/invite', 'UsersController@invite')->middleware('checkPermiss
 #### [2] Models
 
 ## 4) Documentation
-Documentation is not written yet and the [documentation](https://github.com/yajra/laravel-acl) of yajra\laravel-acl can be used till then since this project was based on it.
+Documentation is not written yet and the [documentation](https://yajrabox.com/docs/laravel-acl/3.0) of yajra\laravel-acl can be used till then since this project was based on it.
 ### Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
