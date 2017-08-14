@@ -9,7 +9,6 @@ use Illuminate\Support\Str;
 use Illuminate\View\Compilers\BladeCompiler;
 use Paracha\Acl\Models\Permission;
 use Paracha\Acl\Models\Role;
-use Paracha\Acl\Models\Acl;
 
 class AclServiceProvider extends ServiceProvider
 {
