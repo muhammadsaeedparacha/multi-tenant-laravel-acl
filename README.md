@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
+<!-- [![Build Status][ico-travis]][link-travis] -->
 [![Total Downloads][ico-downloads]][link-downloads]
 
 Multi Tenant Laravel ACL is a simple Multi Database Multi Tenant - user, company_user, role, permission ACL for SaaS Applications in Laravel Framework.
@@ -89,7 +89,7 @@ Route::post('/users/invite', 'UsersController@invite')->middleware('checkPermiss
 });
 ```
 
-#### [2] Models
+#### [ii] Models
 
 ## 4) Documentation
 Documentation is not written yet and the [documentation](https://yajrabox.com/docs/laravel-acl/3.0) of yajra\laravel-acl can be used till then since this project was based on it.
