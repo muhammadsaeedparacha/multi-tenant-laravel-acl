@@ -22,7 +22,6 @@ class Permission extends Model
      * @var string
      */
     protected $table = 'permissions';
-    // protected $connection = env('DB_CONNECTION', 'mysql');
 
     /**
      * @var array
