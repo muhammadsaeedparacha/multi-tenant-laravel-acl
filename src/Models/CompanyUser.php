@@ -8,7 +8,6 @@ class CompanyUser extends Model
 {
 	use AclCompanyUser;
 	protected $table = 'company_user';
-	protected $connection = config('database.default');
 	protected $fillable = ['company_id','user_id','settings','authorized'];
 
 }
