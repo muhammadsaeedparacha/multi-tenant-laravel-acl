@@ -89,7 +89,13 @@ Route::post('/users/invite', 'UsersController@invite')->middleware('checkPermiss
 });
 ```
 
-#### [ii] Models
+#### [ii] Migrate Tenant migrations from folders set in `config('acl.tenantMigrations')`
+``` php
+$company = Company::find(1);
+$company->createTenantDatabase();
+$company->migrateTenant();
+```
+This will create Database with name db_1 for Company ID 1 with username = 1, and password = 'password' (This is insecure and needs to be secured)
 
 ## 4) Documentation
 Documentation is not written yet and the [documentation](https://yajrabox.com/docs/laravel-acl/3.0) of yajra\laravel-acl can be used till then since this project was based on it.
