@@ -15,8 +15,6 @@ class CreatePermissionablesTable extends Migration
     {
         $db = config()->get('database.connections.' . config('database.default') . '.database');
         Schema::connection('tenant')->create('permissionables', function (Blueprint $table) {
-            
-
             $table->increments('id');
             $table->integer('permission_id')->unsigned();
             $table->foreign('permission_id')->references('id')->on(new Expression($db . '.permissions'))->onDelete('cascade');
