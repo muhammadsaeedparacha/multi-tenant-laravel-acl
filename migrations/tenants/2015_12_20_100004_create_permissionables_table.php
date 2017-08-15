@@ -13,8 +13,9 @@ class CreatePermissionablesTable extends Migration
      */
     public function up()
     {
+        $db = config()->get('database.connections.' . config('database.default') . '.database');
         Schema::connection('tenant')->create('permissionables', function (Blueprint $table) {
-            $db = config()->get('database.connections.' . config('database.default') . '.database');
+            
 
             $table->increments('id');
             $table->integer('permission_id')->unsigned();

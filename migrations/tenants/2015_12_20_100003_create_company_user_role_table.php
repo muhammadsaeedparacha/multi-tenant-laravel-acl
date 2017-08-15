@@ -13,9 +13,8 @@ class CreateCompanyUserRoleTable extends Migration
      */
     public function up()
     {
+        $db = config()->get('database.connections.' . config('database.default') . '.database');
         Schema::connection('tenant')->create('company_user_role', function (Blueprint $table) {
-            $db = config()->get('database.connections.' . config('database.default') . '.database');
-
             $table->increments('id');
             $table->integer('role_id')->unsigned()->index();
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
