@@ -5,7 +5,7 @@ return [
      * Array of all the paths in Tenant Migrations in Migrations Folder
      * App/Database/Migrations/Tenant
      */
-    'tenantMigrations' => ['/tenants']
+    'tenantMigrations' => ['/tenants'],
 
     // Note: In case of exporting the Models manually, use your own Paths
     /**
@@ -40,7 +40,7 @@ return [
      * 1) User: When 1 Company/Tenant belongs to One User Only
      * 2) Subdomain: When 1 User can belong to many tenants. E.g. One User have Multiple Companies for Accounting Software etc.
      */
-    'tenantIdentification' => 'subdomain'
+    'tenantIdentification' => 'subdomain',
 
     'connections' =>
     [

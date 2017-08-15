@@ -99,14 +99,13 @@ trait AclCompany
         \Config::set('database.connections.tenant.password', config('database.connections.' . config('database.default') . '.password'));
         \DB::purge('tenant');
         \DB::reconnect('tenant');
-        $defaultConnection = config('database.default');
-        $mig->setConnection('tenant');
+        $mig->setConnection(config('acl.connections.tenant'));
         $mig->getRepository()->createRepository();
         $path = base_path('database/migrations');
         forEach (config('acl.tenantMigrations') as $tenantPath){
             $mig->run($path . $tenantPath);
         }
-        $mig->setConnection($defaultConnection);
+        $mig->setConnection(config('acl.connections.master'));
     }
     
     public static function dummy(Company $company = null){
@@ -114,5 +113,13 @@ trait AclCompany
         
         $company->createTenantDatabase();
         $company->migrateTenant();
+        $perm = config('acl.permission', \Paracha\Acl\Models\Permission::class)::where('resource','customers')->get();
+        \Paracha\Acl\Models\CompanyUser::find(1)->permissions()->attach($perm);
+        $perm = config('acl.permission', \Paracha\Acl\Models\Permission::class)::where('resource','sales')->get();
+        \Paracha\Acl\Models\CompanyUser::find(1)->permissions()->attach($perm);
+        $perm = config('acl.permission', \Paracha\Acl\Models\Permission::class)::where('resource','users')->get();
+        \Paracha\Acl\Models\CompanyUser::find(1)->permissions()->attach($perm);
+        $perm = config('acl.permission', \Paracha\Acl\Models\Permission::class)::where('resource','suppliers')->get();
+        \Paracha\Acl\Models\CompanyUser::find(1)->permissions()->attach($perm);
     }
 }
