@@ -39,7 +39,7 @@ trait AclCompany
         switch ($method) {
             case 'subdomain':
             $request = request()->getHost();
-            $subdomain = explode('.', $request);
+            $subdomain = explode('.', $reques1t);
             $subdomain = array_slice($subdomain, 0, count($subdomain) - 2 );
             $subdomain = $subdomain[0];
             $company = Company::where('subdomain', $subdomain)->first();
@@ -68,11 +68,11 @@ trait AclCompany
         \DB::statement($query);
     }
     
-    public function setTenantConnection($default = ""){
-        if($default == ""){
-            $default = env('DB_CONNECTION');
+    public function setTenantConnection($dbConnection = ""){
+        if($dbConnection == ""){
+            $dbConnection = config('database.default');
         }
-        switch ($default) {
+        switch ($dbConnection) {
             case 'mysql':
             \Config::set('database.connections.tenant.host', $this->db_host);
             \Config::set('database.connections.tenant.database', 'db_' . $this->id);

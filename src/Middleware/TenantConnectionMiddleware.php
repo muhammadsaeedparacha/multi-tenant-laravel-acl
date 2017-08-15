@@ -35,7 +35,7 @@ class TenantConnectionMiddleware
             {
                 if($companyUser->authorized){
                     $company->setTenantConnection();
-                    if (\DB::connection('tenant')->getDatabaseName() == "")
+                    if (config('database.connections.tenant.database') == "")
                     {
                         $error = ['error' => ["Database Error"]];
                         return response($error, 422);
