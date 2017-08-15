@@ -20,7 +20,7 @@ class TenantConnectionMiddleware
     */
     public function handle($request, Closure $next, $permission = null)
     {
-        $tenantIdentification = config('tenantIdentification');
+        $tenantIdentification = config('acl.tenantIdentification');
         $company = Company::loggedInCompany($tenantIdentification);
         if($company)
         {
