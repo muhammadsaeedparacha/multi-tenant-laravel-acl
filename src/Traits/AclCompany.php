@@ -37,7 +37,7 @@ trait AclCompany
         //Return the Company that the current user is visiting through the SubDomain
         switch ($method) {
             case 'subdomain':
-            $request = Request::getHost();
+            $request = request()->getHost();
             $subdomain = explode('.', $request);
             $subdomain = array_slice($subdomain, 0, count($subdomain) - 2 );
             $subdomain = $subdomain[0];
