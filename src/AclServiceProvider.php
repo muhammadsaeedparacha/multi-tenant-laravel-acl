@@ -20,11 +20,11 @@ class AclServiceProvider extends ServiceProvider
      */
     public function boot(GateContract $gate)
     {
-        // if ($this->app->runningInConsole())
-        // {
-        $this->publishConfig();
-        $this->publishMigrations();
-        // }
+        if ($this->app->runningInConsole())
+        {
+            $this->publishConfig();
+            $this->publishMigrations();
+        }
         $this->registerPolicies();
         // Note: Not yet converted from Yajra to Paracha
         // $this->registerPermissions($gate);
