@@ -67,7 +67,7 @@ trait AclCompany
         \DB::statement($query);
     }
     
-    public function setTenantConnection($default = env('DB_CONNECTION')){
+    public function setTenantConnection($default = ""){
         if($default == ""){
             $default = env('DB_CONNECTION');
         }
