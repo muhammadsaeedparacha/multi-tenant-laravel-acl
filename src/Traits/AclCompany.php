@@ -95,8 +95,8 @@ trait AclCompany
         $mig = app()->make('migrator');
         $this->setTenantConnection();
         // fixit
-        \Config::set('database.connections.tenant.username', config('database.connections.' . config('database.default') . '.database'));
-        \Config::set('database.connections.tenant.password', config('database.connections.' . config('database.default') . '.database'));
+        \Config::set('database.connections.tenant.username', config('database.connections.' . config('database.default') . '.username'));
+        \Config::set('database.connections.tenant.password', config('database.connections.' . config('database.default') . '.password'));
         \DB::purge('tenant');
         \DB::reconnect('tenant');
         
