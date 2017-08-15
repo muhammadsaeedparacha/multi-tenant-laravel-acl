@@ -26,12 +26,12 @@ trait AclCompany
      **/
     public function users()
     {
-        return $this->belongsToMany('\App\User', 'company_user')->withPivot('settings', 'authorized');
+        return $this->belongsToMany(config('acl.user','\App\User'), 'company_user')->withPivot('settings', 'authorized');
     }
 
     public function user()
     {
-        return $this->belongsTo('\App\User');
+        return $this->belongsTo(config('acl.user','\App\User'));
     }
     
     public static function loggedInCompany($method){

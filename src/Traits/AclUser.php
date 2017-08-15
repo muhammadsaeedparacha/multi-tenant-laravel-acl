@@ -8,11 +8,11 @@ use App\User;
 trait AclUser
 {
 	public function companies(){
-		return $this->BelongsToMany('App\Models\Universal\Company')->withPivot('settings', 'authorized');
+		return $this->BelongsToMany(config('acl.company','App\Models\Universal\Company'))->withPivot('settings', 'authorized');
 	}
 	
 	public function ownedCompanies()
 	{
-		return $this->HasMany('App\Models\Universal\Company');
+		return $this->HasMany(config('acl.company','Paracha\Acl\Models\Company'));
 	}
 }
