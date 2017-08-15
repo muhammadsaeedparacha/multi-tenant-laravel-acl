@@ -95,10 +95,10 @@ trait AclCompany
         $mig = app()->make('migrator');
         $this->setTenantConnection();
         // fixit
-        // \Config::set('database.connections.tenant.username', config('database.connections.' . config('database.default') . '.database'));
-        // \Config::set('database.connections.tenant.password', config('database.connections.' . config('database.default') . '.database'));
-        // \DB::purge('tenant');
-        // \DB::reconnect('tenant');
+        \Config::set('database.connections.tenant.username', config('database.connections.' . config('database.default') . '.database'));
+        \Config::set('database.connections.tenant.password', config('database.connections.' . config('database.default') . '.database'));
+        \DB::purge('tenant');
+        \DB::reconnect('tenant');
         
         $mig->setConnection('tenant');
         $mig->getRepository()->createRepository();
