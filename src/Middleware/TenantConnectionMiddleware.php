@@ -20,7 +20,8 @@ class TenantConnectionMiddleware
     */
     public function handle($request, Closure $next, $permission = null)
     {
-        $company = Company::loggedInCompany(config('acl.tenantIdentification'));
+        $tenantIdentification = config('tenantIdentification');
+        $company = Company::loggedInCompany($tenantIdentification);
         if($company)
         {
             $companyUser = CompanyUser::where('company_id', $company->id)->where('user_id', $request->user()->id)->first();
