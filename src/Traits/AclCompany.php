@@ -102,17 +102,11 @@ trait AclCompany
         $defaultConnection = config('database.default');
         $mig->setConnection('tenant');
         $mig->getRepository()->createRepository();
-        $mig->setConnection($defaultConnection);
         $path = base_path('database/migrations');
         forEach (config('acl.tenantMigrations') as $tenantPath){
             $mig->run($path . $tenantPath);
         }
-        // fixit
-        // $mig->run($path . '/tenants/master');
-        // $mig->run($path . '/tenants/master/users');
-        // $mig->run($path . '/tenants/master/inventory');
-        // $mig->run($path . '/tenants/accounts');
-        // $mig->run($path . '/tenants/hrm');
+        $mig->setConnection($defaultConnection);
     }
     
     public static function dummy(Company $company = null){

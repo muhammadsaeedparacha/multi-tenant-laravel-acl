@@ -41,4 +41,10 @@ return [
      * 2) Subdomain: When 1 User can belong to many tenants. E.g. One User have Multiple Companies for Accounting Software etc.
      */
     'tenantIdentification' => 'subdomain'
+
+    'connections' =>
+    [
+    'master' => 'mysql',
+    'tenant' => 'tenant'
+    ]
     ];
