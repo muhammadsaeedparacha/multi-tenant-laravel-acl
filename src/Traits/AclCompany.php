@@ -39,7 +39,7 @@ trait AclCompany
         switch ($method) {
             case 'subdomain':
             $request = request()->getHost();
-            $subdomain = explode('.', $reques1t);
+            $subdomain = explode('.', $request);
             $subdomain = array_slice($subdomain, 0, count($subdomain) - 2 );
             $subdomain = $subdomain[0];
             $company = Company::where('subdomain', $subdomain)->first();
