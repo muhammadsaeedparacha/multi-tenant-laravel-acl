@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Universal;
+namespace Paracha\Acl\Models;
 use Paracha\Acl\Traits\AclCompanyUser;
 use Illuminate\Database\Eloquent\Model;
 

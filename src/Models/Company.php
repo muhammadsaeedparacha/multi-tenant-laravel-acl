@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Universal;
+namespace Paracha\Acl\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
