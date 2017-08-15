@@ -34,7 +34,7 @@ Paracha\Acl\AclServiceProvider::class
 'checkPermission' => \Paracha\Acl\Middleware\CheckPermissionsMiddleware::class,
 ```
 
-#### [iii] Set Master & Tenant Connection: in `Config\Database` to be filled on the fly based on tenant:
+#### [iii] Tenant Connection: in `Config\Database` to be filled on the fly based on tenant:
 Note: Currently only Supports MySQL
 ```php
 'tenant' => [
@@ -57,7 +57,7 @@ Note: Currently only Supports MySQL
 $ php artisan vendor:publish --tag=multi-tenant-laravel-acl
 ```
 
-#### [v: Optional] Configure your Tenant Migrations Location: in `Config\Acl`. The array defines folders within `Database\Migrations`
+#### [v: Optional] Configure your Tenant Migrations Locations: in `Config\Acl`. The array defines folders within `Database\Migrations`
 ``` php
 'tenantMigrations' => ['/tenants']
 ```
