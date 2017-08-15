@@ -3,6 +3,10 @@
 namespace Paracha\Acl\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
+use Paracha\Acl\Models\Company;
+use Illuminate\Support\Facades\Route;
+use Paracha\Acl\Models\CompanyUser;
 
 class TenantConnectionMiddleware
 {

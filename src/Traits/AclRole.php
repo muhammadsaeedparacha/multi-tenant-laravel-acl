@@ -42,17 +42,17 @@ trait AclRole
      */
     public function permissions()
     {
-        return $this->morphToMany(config('acl.permission', 'App\Models\Universal\Permission'), 'permissionable', config()->get('database.connections.tenant.database') . '.permissionables')->withPivot('owner', 'categories', 'manager')->withTimestamps();
+        return $this->morphToMany(config('acl.permission', '\Paracha\Models\Permission'), 'permissionable', config()->get('database.connections.tenant.database') . '.permissionables')->withPivot('owner', 'categories', 'manager')->withTimestamps();
     }
 
     // public function users()
     // {
-    //     return $this->belongsToMany(config('acl.user', App\User::class))->withTimestamps();
+    //     return $this->belongsToMany(config('acl.user', 'App\User'))->withTimestamps();
     // }
 
     public function companyusers()
     {
-        return $this->belongsToMany(config('acl.companyUser', \App\Models\Universal\CompanyUser::class), config()->get('database.connections.tenant.database') . '.company_user_role')->withTimestamps();
+        return $this->belongsToMany(config('acl.companyUser', '\Paracha\Models\CompanyUser'), config()->get('database.connections.tenant.database') . '.company_user_role')->withTimestamps();
     }
 
     /**

@@ -222,12 +222,12 @@ trait AclCompanyUser
      */
     public function roles()
     {
-        return $this->belongsToMany(config('acl.role', Role::class), config()->get('database.connections.tenant.database') . '.company_user_role')->withTimestamps();
+        return $this->belongsToMany(config('acl.role', '\Paracha\Models\Role'), config()->get('database.connections.tenant.database') . '.company_user_role')->withTimestamps();
     }
 
     public function permissions()
     {
-        return $this->morphToMany(config('acl.permission', Permission::class), 'permissionable', config()->get('database.connections.tenant.database') . '.permissionables')->withPivot('owner', 'categories', 'manager')->withTimestamps();
+        return $this->morphToMany(config('acl.permission', '\Paracha\Models\Permission'), 'permissionable', config()->get('database.connections.tenant.database') . '.permissionables')->withPivot('owner', 'categories', 'manager')->withTimestamps();
     }
 
     /**

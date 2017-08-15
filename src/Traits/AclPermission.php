@@ -12,7 +12,7 @@ trait AclPermission
      */
     public function roles()
     {
-        return $this->morphedByMany(config('acl.role', 'App\Models\Universal\Permission'), 'permissionable');
+        return $this->morphedByMany(config('acl.role', '\Paracha\Models\Permission'), 'permissionable');
     }
 
     /**
@@ -20,7 +20,7 @@ trait AclPermission
      */
     public function companyusers()
     {
-        return $this->morphedByMany(config('acl.companyUser', 'App\Models\Universal\CompanyUser'), 'permissionable', config()->get('database.connections.tenant.database') . '.permissionables');
+        return $this->morphedByMany(config('acl.companyUser', '\Paracha\Models\CompanyUser'), 'permissionable', config()->get('database.connections.tenant.database') . '.permissionables');
     }
 
     /**

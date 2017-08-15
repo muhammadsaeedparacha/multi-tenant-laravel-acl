@@ -26,8 +26,9 @@ class AclServiceProvider extends ServiceProvider
         $this->publishMigrations();
         // }
         $this->registerPolicies();
-        $this->registerPermissions($gate);
-        $this->registerCacheListener();
+        // Note: Not yet converted from Yajra to Paracha
+        // $this->registerPermissions($gate);
+        // $this->registerCacheListener();
         $this->registerBladeDirectives();
     }
 
@@ -85,7 +86,7 @@ class AclServiceProvider extends ServiceProvider
     protected function getPermissions()
     {
         return $this->app['cache.store']->rememberForever('permissions.policies', function () {
-            return Permission::with('roles')->get();
+            return Permission::with('permissionables')->with('roles')->get();
         });
     }
 
@@ -94,19 +95,19 @@ class AclServiceProvider extends ServiceProvider
      */
     protected function registerCacheListener()
     {
-        Permission::saved(function () {
+        Permission::saved(function ($item) {
             $this->app['cache.store']->forget('permissions.policies');
         });
 
-        Permission::deleted(function () {
+        Permission::deleted(function ($item) {
             $this->app['cache.store']->forget('permissions.policies');
         });
 
-        Role::saved(function () {
+        Role::saved(function ($item) {
             $this->app['cache.store']->forget('permissions.policies');
         });
 
-        Role::deleted(function () {
+        Role::deleted(function ($item) {
             $this->app['cache.store']->forget('permissions.policies');
         });
     }
