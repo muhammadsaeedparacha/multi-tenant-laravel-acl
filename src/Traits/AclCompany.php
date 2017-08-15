@@ -4,6 +4,7 @@ namespace Paracha\Acl\Traits;
 
 use Illuminate\Support\Str;
 use Paracha\Acl\Models\Role;
+use Paracha\Acl\Models\Company;
 
 trait AclCompany
 {
