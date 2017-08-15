@@ -67,7 +67,10 @@ trait AclCompany
         \DB::statement($query);
     }
     
-    public function setTenantConnection($default = config('database.default')){
+    public function setTenantConnection($default = env('DB_CONNECTION')){
+        if($default == ""){
+            $default = env('DB_CONNECTION');
+        }
         switch ($default) {
             case 'mysql':
             \Config::set('database.connections.tenant.host', $this->db_host);
