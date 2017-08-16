@@ -5,7 +5,10 @@ return [
      * Array of all the paths in Tenant Migrations in Migrations Folder
      * App/Database/Migrations/Tenant
      */
-    'tenantMigrations' => ['/tenants'],
+    'tenantMigrations' => 
+    [
+    'database/migrations/tenants'
+    ],
 
     // Note: In case of exporting the Models manually, use your own Paths
     /**

@@ -101,10 +101,10 @@ trait AclCompany
         \DB::reconnect('tenant');
         $mig->setConnection(config('acl.connections.tenant'));
         $mig->getRepository()->createRepository();
-        $path = base_path('database/migrations');
-        forEach (config('acl.tenantMigrations') as $tenantPath){
-            $mig->run($path . $tenantPath);
-        }
+        // $path = base_path('database/migrations');
+        // forEach (config('acl.tenantMigrations') as $tenantPath){
+        $mig->run(config('acl.tenantMigrations'), ['step' => true]);
+        // }
         $mig->setConnection(config('acl.connections.master'));
     }
     
