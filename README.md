@@ -32,6 +32,7 @@ Paracha\Acl\AclServiceProvider::class
 'role' => \Paracha\Acl\Middleware\RoleMiddleware::class,
 'tenantConnection' => \Paracha\Acl\Middleware\TenantConnectionMiddleware::class,
 'checkPermission' => \Paracha\Acl\Middleware\CheckPermissionsMiddleware::class,
+'checkModularPermission' => \Paracha\Acl\Middleware\CheckModularPermissionsMiddleware::class,
 ```
 
 #### [iii] Tenant Connection: in `Config\Database` to be filled on the fly based on tenant:
