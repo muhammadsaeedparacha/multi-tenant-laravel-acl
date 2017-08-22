@@ -2,6 +2,13 @@
 
 return [
     /**
+     * Modular Permissiosn check for API URL as /api/module/model instead of api/model. e.g /api/accounting/sales
+     * Leave it false if not sure
+     * For Modular Permissions, pass permissions as 'accounting.sales' instead of 'sales' in Permissions::createResource()
+     */
+    'modular' => false,
+
+    /**
      * Array of all the paths in Tenant Migrations in Migrations Folder
      * App/Database/Migrations/Tenant
      */

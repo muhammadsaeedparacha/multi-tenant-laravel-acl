@@ -4,7 +4,7 @@ namespace Paracha\Acl\Middleware;
 
 use Closure;
 
-class CheckPermissionsMiddleware
+class CheckModularPermissionsMiddleware
 {
     /**
      * Handle an incoming request.
@@ -24,20 +24,21 @@ class CheckPermissionsMiddleware
             // Preparing variables for request permissions authorization
             // /Note this would fail when a request doesn't follow laravel standardized requests 
             // like: api/users/permissions or users/invite would not pass
-            if ($pathCount > 1) {
+            if ($pathCount > 2) {
                 # Model
-                $model = $path[1];
+                $module = $path[1];
+                $model = $path[2];
             }else {
                 return response(["error" => ["Request at " . $path . " not Recognized"]], 403);
             }
-            if ($pathCount > 2) {
+            if ($pathCount > 3) {
                 # Update or Report
                 $create = $path[2] == "create" ? true : false;
                 $record = is_int($path[2]);
                 $recordNumber = $record ? $path[2]: false;
                 $report = $path[2] == "reports" ? true : false;
             }
-            if ($pathCount > 3) {
+            if ($pathCount > 4) {
                 # View record or Report
                 if ($report) {
                 # code...
@@ -48,10 +49,14 @@ class CheckPermissionsMiddleware
                 }
             }
             switch ($pathCount) {
-                case 1:
                 # simply api/
+                case 1:
                 break;
+                # api/module
                 case 2:
+                break;
+
+                case 3:
                 # index: api/sales get - model.read
                 # store: api/sales post - model.create
                 if($request->isMethod('get')){
@@ -62,7 +67,7 @@ class CheckPermissionsMiddleware
                     $permission = $model . ".create";
                 }
                 break;
-                case 3:
+                case 4:
                 # create: api/sales/create get - model.create
                 # show: api/sales/1 get - model.read
                 # update: api/sales/1 patch - model.update
@@ -97,7 +102,7 @@ class CheckPermissionsMiddleware
                     $permission = $model . ".report";
                 }
                 break;
-                case 4:
+                case 5:
                 # specificreport: api/sales/reports/xyz get - model.report
                 # Edit : api/sales/1/edit - model.update
                 if($report){
@@ -114,7 +119,7 @@ class CheckPermissionsMiddleware
                 break;
             }
         }
-        if ($permission && (!$request->user() || !$request->get('companyUser')->can($permission))){
+        if ($permission && (!$request->user() || !$request->get('companyUser')->can($module . $permission))){
             $error = ['error' => ["You are not authorized to view this content!"]];
             return response($error, 401); 
             

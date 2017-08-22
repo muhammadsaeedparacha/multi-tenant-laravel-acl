@@ -71,9 +71,9 @@ class Permission extends Model
         // 'manager'   => $manager,
         ],
         [
-        'slug'     => $slug . '.report',
+        'slug'     => $slug . '.reports',
         'resource' => $slug,
-        'name'     => 'Report ' . $group,
+        'name'     => 'Reports ' . $group,
         // 'manager'   => $manager,
         ],
         ];
