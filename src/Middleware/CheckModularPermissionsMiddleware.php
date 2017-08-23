@@ -17,6 +17,9 @@ class CheckModularPermissionsMiddleware
 
     public function handle($request, Closure $next, $permission = null)
     {
+        if(!config('acl.modular')){
+            return response(["error" => ["Request at " . $path . " not Recognized"]], 403);
+        }
         if (!$permission) {
             $uri = $request->path();
             $path = explode('/', $uri);
@@ -119,7 +122,7 @@ class CheckModularPermissionsMiddleware
                 break;
             }
         }
-        if ($permission && (!$request->user() || !$request->get('companyUser')->can($module . $permission))){
+        if ($permission && (!$request->user() || !$request->get('companyUser')->can($module . '.' . $permission))){
             $error = ['error' => ["You are not authorized to view this content!"]];
             return response($error, 401); 
             
