@@ -40,7 +40,7 @@ class TenantConnectionMiddleware
                         $error = ['error' => ["Database Error"]];
                         return response($error, 422);
                     }
-                    $request->attributes->add(['loggedInCompany' => $company]);
+                    $request->attributes->add(['company' => $company]);
                     $request->attributes->add(['companyUser' => $companyUser]);
                 }else {
                     $error = ['error' => ["Your access has been revoked"]];
