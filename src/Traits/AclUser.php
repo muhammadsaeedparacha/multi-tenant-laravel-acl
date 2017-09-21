@@ -8,7 +8,7 @@ use App\User;
 trait AclUser
 {
 	public function companies(){
-		return $this->BelongsToMany(config('acl.company','App\Models\Universal\Company'))->withPivot('settings', 'authorized');
+		return $this->BelongsToMany(config('acl.company','Paracha\Acl\Models\Company'))->withPivot('settings', 'authorized');
 	}
 	
 	public function ownedCompanies()
