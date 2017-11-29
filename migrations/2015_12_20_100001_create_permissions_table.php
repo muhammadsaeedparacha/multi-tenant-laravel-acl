@@ -17,7 +17,7 @@ class CreatePermissionsTable extends Migration
             $table->increments('id');
             $table->string('name', 50);
             $table->string('slug')->unique();
-            $table->string('resource', 20)->default('System');
+            $table->string('resource', 50)->default('System');
             // $table->boolean('admin')->default(0);
             $table->timestamps();
         });
