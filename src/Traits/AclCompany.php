@@ -113,13 +113,15 @@ trait AclCompany
         
         $company->createTenantDatabase();
         $company->migrateTenant();
-        $perm = config('acl.permission', \Paracha\Acl\Models\Permission::class)::where('resource','accounting.customers')->get();
+        $perm = config('acl.permission', \Paracha\Acl\Models\Permission::class)::where('resource','Accounting.Customer')->get();
         \Paracha\Acl\Models\CompanyUser::find(1)->permissions()->attach($perm);
-        $perm = config('acl.permission', \Paracha\Acl\Models\Permission::class)::where('resource','accounting.sales')->get();
+        $perm = config('acl.permission', \Paracha\Acl\Models\Permission::class)::where('resource','Accounting.Sale')->get();
         \Paracha\Acl\Models\CompanyUser::find(1)->permissions()->attach($perm);
         $perm = config('acl.permission', \Paracha\Acl\Models\Permission::class)::where('resource','users')->get();
         \Paracha\Acl\Models\CompanyUser::find(1)->permissions()->attach($perm);
-        $perm = config('acl.permission', \Paracha\Acl\Models\Permission::class)::where('resource','accounting.suppliers')->get();
+        $perm = config('acl.permission', \Paracha\Acl\Models\Permission::class)::where('resource','Accounting.Supplier')->get();
+        \Paracha\Acl\Models\CompanyUser::find(1)->permissions()->attach($perm);
+        $perm = config('acl.permission', \Paracha\Acl\Models\Permission::class)::where('resource','Accounting.ChartOfAccount')->get();
         \Paracha\Acl\Models\CompanyUser::find(1)->permissions()->attach($perm);
     }
 }
